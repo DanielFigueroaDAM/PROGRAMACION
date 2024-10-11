@@ -1,3 +1,5 @@
+package boletin_extra;
+
 import java.util.Scanner;
 
 public class boletin_extra_ej4 {
