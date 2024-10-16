@@ -1,18 +1,26 @@
 package org.example;
-
 import java.util.Scanner;
 
+/**
+ * Convierte un numero introducido de 0 a 99 en su equivalente en letras.
+ * @version 1.0
+ * @autor Daniel Figueroa Vidal
+ */
 public class Del0al99 {
 
         public static void main(String[] args) {
             Scanner teclado=new Scanner (System.in);
-            int n,n1,n2;
+            int numero, decenas, resto; //Declaramos las variables, la variable numero será el número que tendremos que convertir a letras.
             System.out.println("Dime un numero del 0 al 99");
-            n=teclado.nextInt();
-            n1=n/10;
-            n2=n%10;
-            if(n>9 && n<16 || n2==0 || n==0) {
-                switch (n) {
+            numero =teclado.nextInt();
+            decenas = numero /10; //Haremos la división para obtener las decenas
+            resto = numero %10;//Haremos el resto para saber cual es el segundo valor del numero del valor introducido, ej: del 87 seria el 7
+            if(numero >9 && numero <16 || resto ==0 || numero ==0) {
+                /*
+                Esta condicion se usara para discriminar los numeros que no podremos unir o que nos provocan problemas a la hora de
+                unir los numeros escritos
+                 */
+                switch (numero) {
                     case 0:
                         System.out.print("cero");
                         break;
@@ -61,7 +69,7 @@ public class Del0al99 {
                 }
             }
             else {
-                switch (n1) {
+                switch (decenas) {
                     case 0:
                         System.out.print(" ");
                         break;
@@ -96,7 +104,7 @@ public class Del0al99 {
                         System.out.print(" ");
                         break;
                 }
-                switch (n2) {
+                switch (resto) {
                     case 1:
                         System.out.println("uno");
                         break;
