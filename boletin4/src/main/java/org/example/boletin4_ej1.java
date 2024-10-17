@@ -18,7 +18,7 @@ public class boletin4_ej1 {
         else if(nventas>500 && nventas<=1000){
             System.out.println("alto");
         }
-        else if(nventas>100) {
+        else if(nventas>1000) {
             System.out.println("Primeira necesidade");
         }
         tec.close();
