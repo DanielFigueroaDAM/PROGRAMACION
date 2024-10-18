@@ -1,4 +1,11 @@
 import java.util.Scanner;
+
+/**
+ * Calcular el sueldo final de un trabajador dados los siguientes paramentros.
+ * @version 1.0
+ * @autor Daniel Figueroa Vidal
+ */
+
 public class boletin_extra_ej5 {
     public static void main(String []args) {
         Scanner teclado = new Scanner(System.in);
