@@ -2,6 +2,12 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * Calcular el porcentaje de un descuento dado el precio inicial y el precio final de un producto.
+ * @version 1.0
+ * @autor Daniel Figueroa Vidal
+ */
+
 public class boletin_extra_ej1 {
 
 
