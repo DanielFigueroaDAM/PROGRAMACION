@@ -41,7 +41,7 @@ public class boletin4_ej5 {
                 case 20 -> System.out.println("La letra sería C");
                 case 21 -> System.out.println("La letra sería K");
                 case 22 -> System.out.println("La letra sería E");
-                //En el case hacemos la correspondencia de numeros y letras
+                //En el switch hacemos la correspondencia de numeros y letras
             };
 
         }
