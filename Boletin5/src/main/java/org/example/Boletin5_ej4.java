@@ -22,5 +22,6 @@ public class Boletin5_ej4 {
             }
         }
         System.out.println("Fin");
+        tec.close();
     }
 }

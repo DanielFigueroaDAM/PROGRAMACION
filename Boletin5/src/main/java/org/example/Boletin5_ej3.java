@@ -41,5 +41,6 @@ public class Boletin5_ej3 {
         }while(!comprobador || !comprobador2); //Cuando las dos variables sean true, saldremos del bucle.
         area=base*altura;
         System.out.println("El area del rectangulo es "+area);
+        tec.close();
     }
 }

@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Muestra la suma y el producto de todos los numeros que están entre el 10 y el 90.
+ * Muestra la suma y el producto de todos los números que están entre el 10 y el 90.
  * @version 1.0
  * @autor Daniel Figueroa Vidal
  */
