@@ -15,7 +15,7 @@ public class Boletin5_ej3 {
         boolean comprobador = false, comprobador2 = false; //Usaremos los boleanos para no tener que usar dos bucles.
         do {
 
-            if(comprobador==false) { //En la primera vuelta será falso porque se inicializó así.
+            if(!comprobador) { //En la primera vuelta será falso porque se inicializó así.
                 System.out.println("Dime la base(tiene que ser un numero positivo)");
                 altura = tec.nextInt();
                 if(altura>0){ //Si la variable altura es positivo el la variable boolean será true.
@@ -26,7 +26,7 @@ public class Boletin5_ej3 {
                 }
             }
 
-            if(comprobador2==false) { //En la primera vuelta será falso porque se inicializó así.
+            if(!comprobador2) { //En la primera vuelta será falso porque se inicializó así.
                 System.out.println("Dime la altura(tiene que ser un numero positivo)");
                 base = tec.nextInt();
                 if(base>0){ //Si la variable altura es positivo el la variable boolean será true.
@@ -38,7 +38,7 @@ public class Boletin5_ej3 {
             }
 
 
-        }while(comprobador==false || comprobador2==false); //Cuando las dos variables sean true, saldremos del bucle.
+        }while(!comprobador || !comprobador2); //Cuando las dos variables sean true, saldremos del bucle.
         area=base*altura;
         System.out.println("El area del rectangulo es "+area);
     }
