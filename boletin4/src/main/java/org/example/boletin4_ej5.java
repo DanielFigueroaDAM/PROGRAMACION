@@ -48,6 +48,7 @@ public class boletin4_ej5 {
         else {
             System.out.println("Su numero no es valido");
         }
+        tec.close();
         //Esta condición impide que el usuario ponga un numero mayor a 9 digitos o un numero negativo.
     }
 }
