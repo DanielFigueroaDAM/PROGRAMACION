@@ -53,6 +53,7 @@ public class Boletin5_ej5 {
             porcentaje = (menosmil * 100) / contador;
             System.out.println("El porcentaje de trabajadores que cobran menos de 1000 es de " + porcentaje + "%");
         }
+        tec.close();
 
     }
 }
