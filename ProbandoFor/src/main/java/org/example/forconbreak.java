@@ -12,9 +12,8 @@ public class forconbreak {
             if(n==999){
                 break;
             }
-            else{
-                sum=sum+n;
-            }
+            sum=sum+n;
+
         }
         System.out.println("La suma es "+sum);
         sc.close();
