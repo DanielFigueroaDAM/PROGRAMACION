@@ -40,3 +40,5 @@ public class WhileMedia {
             media=(double)y/x;
             System.out.println("la media es"+media);
         }
+
+ */
