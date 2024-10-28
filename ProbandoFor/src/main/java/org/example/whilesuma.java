@@ -1,5 +1,4 @@
-```java
-        package org.example;
+package org.example;
 
 import java.util.Scanner;
 
@@ -21,4 +20,3 @@ public class whilesuma {
         sc.close();
     }
 }
-```
