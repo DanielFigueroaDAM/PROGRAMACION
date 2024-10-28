@@ -7,7 +7,7 @@ public class forconbreak {
         Scanner sc=new Scanner(System.in);
         int n, sum=0;
         for (int i=0;i<10;i++){
-            System.out.println("Dime cada numero: ");
+            System.out.println("Dime cada numero(para salir ingresa el 999): ");
             n = sc.nextInt();
             if(n==999){
                 break;
