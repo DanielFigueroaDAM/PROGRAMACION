@@ -20,12 +20,13 @@ public class Boletin6_ej5 {
 
     /**
      * Calcula la diferencia en minutos entre dos horarios dados en horas y minutos.
-     * @param hora1 Hora del primer horario.
+     *
+     * @param hora1   Hora del primer horario.
      * @param minuto1 Minuto del primer horario.
-     * @param hora2 Hora del segundo horario.
+     * @param hora2   Hora del segundo horario.
      * @param minuto2 Minuto del segundo horario.
      * @return La diferencia en minutos entre ambos horarios, calculada en valor absoluto para obtener
-     *         siempre un resultado positivo.
+     * siempre un resultado positivo.
      */
     static int diferenciaMin(int hora1, int minuto1, int hora2, int minuto2) {
         // Convierte el primer horario a minutos
@@ -41,7 +42,6 @@ public class Boletin6_ej5 {
             return totalMinutos1 - totalMinutos2; // Restamos para obtener una diferencia positiva
         } else { // Si el segundo horario es posterior al primero
             return totalMinutos2 - totalMinutos1; // Restamos en el orden inverso para mantener la diferencia positiva
-        }
         }
     }
 }
