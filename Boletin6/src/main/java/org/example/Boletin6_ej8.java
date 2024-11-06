@@ -39,3 +39,4 @@ public class Boletin6_ej8 {
         return resultado;
     }
 }
+
