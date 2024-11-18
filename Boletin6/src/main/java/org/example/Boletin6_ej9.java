@@ -32,12 +32,12 @@ public class Boletin6_ej9 {
         // Caso base 2: Si el número es 1, el resultado es 1
         else if (numero == 1) {
             resultado = 1;
+
         }
         // Caso recursivo: calcula el término sumando los dos términos anteriores
         else {
             resultado = fibonacciRecursivo(numero - 1) + fibonacciRecursivo(numero - 2);
         }
-
         // Retorna el resultado del cálculo del término de Fibonacci
         return resultado;
     }

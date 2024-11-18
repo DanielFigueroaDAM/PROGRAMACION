@@ -13,5 +13,15 @@ public class Main {
         System.out.println(edades[4]);
         String[]nomes={"Manuel","Jose","Rosa","Ana"};
         System.out.println(nomes[3]);
+        int minimo=edades[0];
+        for(int i=1;i<edades;i++){
+            if(minimo>edades[i] minimo = edades [i]);
+            System.out.println("O valor minimo de eedades é "+minimo);
+        }
+        //for each
+        for(int edad:edades){
+            if(minimo>edad) minimo=edad;
+        }
+        System.out.println("O valor minimo de eedades é "+minimo);
     }
 }
