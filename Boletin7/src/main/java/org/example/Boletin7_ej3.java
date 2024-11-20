@@ -6,7 +6,7 @@ public class Boletin7_ej3 {
         int media = 0, alta = 0, suspensos=0,aprobados=0, j=0;
         notas = new int[30];
         for (int i = 0; i < notas.length; i++) {
-            notas[i] = (int) (Math.random() * 10);
+            notas[i] = (int) (Math.random() * 11);
             if(notas[i]>=5){
                 aprobados++;
             }
@@ -20,8 +20,8 @@ public class Boletin7_ej3 {
 
         }
         int[] aprobadosarr;
-        aprobadosarr = new int[aprobados];
-        for(int i = 0; i < aprobados; i++){
+        aprobadosarr = new int[aprobados+1];
+        for(int i = 0; i < notas.length; i++){
             if(notas[i]>=5) {
                 j++;
                 aprobadosarr[j] = notas[i];
@@ -29,6 +29,13 @@ public class Boletin7_ej3 {
             }
 
         }
+        for(int i = aprobadosarr.length-1; i > 0; i--){
+            int o=i;
+            while (aprobadosarr[i]<aprobadosarr[o-1]){
+                i=i-1;
+            }
+        }
+
         media = media / notas.length;
         System.out.println("El numero de suspensos es "+suspensos);
         System.out.println("El numero de aprobados es "+aprobados);
