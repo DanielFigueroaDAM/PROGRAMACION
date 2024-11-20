@@ -29,10 +29,14 @@ public class Boletin7_ej3 {
             }
 
         }
-        for(int i = aprobadosarr.length-1; i > 0; i--){
-            int o=i;
-            while (aprobadosarr[i]<aprobadosarr[o-1]){
-                i=i-1;
+        int u=0;
+        for(int z=0;z<aprobadosarr.length;z++){
+            for(int p=0;p<aprobadosarr.length-1;p++){
+                if(aprobadosarr[z]<aprobadosarr[u+1]){
+                    int temp = aprobadosarr[p];
+                    aprobadosarr[p] = aprobadosarr[p + 1];
+                    aprobadosarr[p + 1] = temp;
+                }
             }
         }
 
