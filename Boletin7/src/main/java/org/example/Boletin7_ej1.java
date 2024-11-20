@@ -5,7 +5,7 @@ public class Boletin7_ej1 {
         int [] numeros;
         numeros=new int[6];
         for(int i=0;i<numeros.length;i++){
-            numeros[i]= (int) (Math.random() * 50);
+            numeros[i]= (int) (Math.random() * 51);
             System.out.println(numeros[i]);
         }
         System.out.println("----");
