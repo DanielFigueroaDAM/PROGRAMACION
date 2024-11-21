@@ -6,6 +6,5 @@ public class matrizPrueba {
         edades =new int[5];
         int [] outrasEdades;
         outrasEdades=edades;
-        
     }
 }
