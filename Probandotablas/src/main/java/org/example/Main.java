@@ -1,5 +1,5 @@
 package org.example;
-/*
+
 
 public class Main {
     public static void main(String[] args) {
@@ -14,8 +14,8 @@ public class Main {
         String[]nomes={"Manuel","Jose","Rosa","Ana"};
         System.out.println(nomes[3]);
         int minimo=edades[0];
-        for(int i=1;i<edades[i];i++){
-            if(minimo>edades[i] ;minimo = edades [i]);
+        for(int i=1;i<edades;i++){
+            if(minimo>edades[i] minimo = edades [i]);
             System.out.println("O valor minimo de eedades é "+minimo);
         }
         //for each
@@ -25,4 +25,3 @@ public class Main {
         System.out.println("O valor minimo de eedades é "+minimo);
     }
 }
- */
