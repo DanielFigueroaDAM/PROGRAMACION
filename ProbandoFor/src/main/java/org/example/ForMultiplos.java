@@ -8,6 +8,5 @@ public class ForMultiplos {
             x=7*i;
             System.out.println(x);
         }
-
     }
 }

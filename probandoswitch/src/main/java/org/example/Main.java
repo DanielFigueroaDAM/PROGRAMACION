@@ -31,6 +31,6 @@ public class Main {
                 System.out.println("nota invalida");
                 break;
         }
-teclado.close();
-    }
+
+}
 }

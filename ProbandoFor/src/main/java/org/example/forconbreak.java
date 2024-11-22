@@ -9,7 +9,7 @@ public class forconbreak {
         for (int i=0;i<10;i++){
             System.out.println("Dime cada numero(para salir ingresa el 999): ");
             n = sc.nextInt();
-            if(n==999){
+            if(n<0){
                 break;
             }
             sum=sum+n;
