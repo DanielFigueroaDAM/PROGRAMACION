@@ -1,3 +1,4 @@
+/*
 package org.example;
 
 public class Boletin7_ej6 {
@@ -17,7 +18,7 @@ public class Boletin7_ej6 {
             int j=0;
             int[] lista2 = new int[mitad];
                 if(numero> mitad){
-                    for(int i = mitad; i < lista.length; i++){
+                    for(int i = mitad; i < lista.length-1; i++){
                         j++;
                         lista[i] = lista2[j];
                     }
@@ -25,13 +26,21 @@ public class Boletin7_ej6 {
 
                 }
                 else if(numero<mitad){
+                    for(int i = 0; i < mitad-1; i++){
+                        j++;
+                        lista[i] = lista2[j];
+                    }
+                    return array(lista2,numero);
 
                 }
-                else{
-                    return mitad;
+                else if(numero==mitad){
+                    return -2;
+                }
+                else {
+                    return -1;
                 }
 
 
-            return mitad;
         }
 }
+*/
