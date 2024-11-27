@@ -1,4 +1,4 @@
-/*
+
 package org.example;
 
 public class Boletin7_ej6 {
@@ -43,4 +43,3 @@ public class Boletin7_ej6 {
 
         }
 }
-*/
