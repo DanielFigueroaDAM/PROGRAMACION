@@ -66,7 +66,7 @@ public class taboahorario {
 
         }
         System.out.println("Ese dia a esa hora tendrías "+horario[punterohoras][punterodias]);
-        String asignatura = "ING";
+        String asignatura = "BD";
         int cantidad=horasAsign(horario,asignatura);
         System.out.println(cantidad);
 
@@ -74,12 +74,12 @@ public class taboahorario {
     static int horasAsign(String[][] lista, String Asign){
         int j=0,contador=0;
         for(int i=0;i< lista.length;i++){
-            for(;j<lista[0].length;j++){
+            for(j=0;j<lista[0].length;j++){
                 if(Asign.equals(lista[i][j])){
                     contador++;
                 }
             }
-            j=0;
+
         }
         return contador;
         }
