@@ -11,10 +11,12 @@ package org.example;
  * @version 1.0
  * @autor Daniel Figueroa Vidal
  */
-public class Boletin7_ej10 {
+public class
+
+Boletin7_ej10 {
     public static void main(String[] args) {
         // Declaración de los arreglos iniciales
-        int[] numOrden = {1, 2, 3, 4, 5}; // Arreglo ordenado
+        int[] numOrden = {1, 2, 3, 4, 5,6,7,8}; // Arreglo ordenado
         int[] numDesord = {2, 3, 1, 5, 4}; // Arreglo desordenado
         int num = 2; // Número que se desea eliminar
 
