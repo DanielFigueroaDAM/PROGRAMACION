@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.Scanner;
-//probando
 
 public class Boletin7_2_ej2 {
     public static void main(String[] args) {
