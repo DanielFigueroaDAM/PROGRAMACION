@@ -14,6 +14,7 @@ static int factorialRecursivo(int numero){
     return res;
 
 }
+
 static int mElevadoN(int numero,int exponente){
     long res;
     if(numero==1){
