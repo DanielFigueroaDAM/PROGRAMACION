@@ -3,6 +3,7 @@
 - [Boletin 3](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin3/src/main/java/org/example)
 - [Boletin 4](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/boletin4/src/main/java/org/example)
 - [Boletin 5](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin5/src/main/java/org/example)
+- [Boletin 6]([https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin5/src/main/java/org/example](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin6/src/main/java/org/example))
 - [Boletin Extra](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/boletin_extra/src/main/java/org/example)
 - [Boletin 7](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin7)
 - [Boletin 7.2](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin7.2)
