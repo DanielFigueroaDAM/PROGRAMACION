@@ -7,3 +7,4 @@
 - [Boletin Extra](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/boletin_extra/src/main/java/org/example)
 - [Boletin 7](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin7)
 - [Boletin 7.2](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin7.2)
+- [Boletin 8](https://github.com/DanielFigueroaDAM/PROGRAMACION/tree/main/Boletin8/src/main/java/org/example)
