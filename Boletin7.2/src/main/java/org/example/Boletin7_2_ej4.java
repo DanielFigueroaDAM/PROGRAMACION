@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @version 1.0
  * @autor Daniel Figueroa Vidal
  */
-public class Boletin7_2_ej1 {
+public class Boletin7_2_ej4 {
     public static void main(String[] args) {
         // Declaración de un objeto Scanner para entrada del usuario
         Scanner scanner = new Scanner(System.in);
