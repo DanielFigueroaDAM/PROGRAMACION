@@ -1,0 +1,5 @@
+package org.example;
+
+public class Boletin8_2_ej6 {
+
+}
