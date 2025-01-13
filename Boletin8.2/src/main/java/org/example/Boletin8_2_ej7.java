@@ -2,8 +2,8 @@ package org.example;
 
 public class Boletin8_2_ej7 {
     public static void main(String[] args) {
-        String text1 ="scadeas";
-        String text2 ="subcadea";
+        String text1 ="casos";
+        String text2 ="caso";
         System.out.println(estaContido(text1,text2));
         System.out.println(ordenAlfabetico(text1,text2));
     }
