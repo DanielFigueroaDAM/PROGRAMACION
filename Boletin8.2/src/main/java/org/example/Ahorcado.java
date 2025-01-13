@@ -115,7 +115,7 @@ public class Ahorcado {
                 System.out.println("""
                            ___________
                            |         |
-                           |       (x_x)
+                           |      ( °-° )
                            |        
                            |        
                            |        
@@ -129,7 +129,7 @@ public class Ahorcado {
                 System.out.println("""
                            ___________
                            |         |
-                           |       (x_x)
+                           |      ( °-° )
                            |         |
                            |         |
                            |         |
@@ -143,7 +143,7 @@ public class Ahorcado {
                 System.out.println("""
                            ___________
                            |         |
-                           |       (x_x)
+                           |      ( °-° )
                            |       --|
                            |         |
                            |         |
@@ -157,7 +157,7 @@ public class Ahorcado {
                 System.out.println("""
                            ___________
                            |         |
-                           |       (x_x)
+                           |      ( °-° )
                            |       --|--
                            |         |
                            |         |
@@ -171,7 +171,7 @@ public class Ahorcado {
                 System.out.println("""
                            ___________
                            |         |
-                           |       (x_x)
+                           |      ( °-° )
                            |       --|--
                            |         |
                            |        /
@@ -185,7 +185,7 @@ public class Ahorcado {
                 System.out.println("""
                            ___________
                            |         |
-                           |       (x_x)
+                           |      ( x_x )
                            |       --|--
                            |         |
                            |        / \\
