@@ -8,11 +8,15 @@ public class Ahorcado {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
         String interrogante="camioneta";
+        interrogante=interrogante.toLowerCase();
+        interrogante=limpiarTildes(interrogante);
+        interrogante=interrogante.replaceAll(" ","");
         String oculta="";
         boolean victoria=true;
         for (int i = 0; i < interrogante.length(); i++) {
             oculta=oculta+"_";
         }
+        System.out.println(oculta);
         do {
             System.out.println("Vas a probar con letra o con palabra?");
             System.out.println("1.- Letra");
@@ -25,6 +29,8 @@ public class Ahorcado {
             else if(opcion==2){
                 System.out.println("Dime la palabra");
                 String palabra=tec.next();
+                palabra=palabra.toLowerCase();
+                palabra=limpiarTildes(palabra);
                 if(buscarPalabra(palabra,interrogante)){
                     break;
                 }
@@ -53,6 +59,8 @@ public class Ahorcado {
         Scanner tec = new Scanner(System.in);
         System.out.println("Dime una letra");
         String caracter=tec.next();
+        caracter=caracter.toLowerCase();
+        caracter=limpiarTildes(caracter);
         if(caracter.length()>1){
             System.out.println("No es valido");
             return '!';
@@ -199,5 +207,14 @@ public class Ahorcado {
                 System.out.println("No hay fallos");
         }
 
+    }
+    public static String limpiarTildes(String interrogante){
+        interrogante=interrogante.toLowerCase();
+        interrogante=interrogante.replace('á','a');
+        interrogante=interrogante.replace('é','e');
+        interrogante=interrogante.replace('í','i');
+        interrogante=interrogante.replace('ó','o');
+        interrogante=interrogante.replace('ú','u');
+        return interrogante;
     }
 }
