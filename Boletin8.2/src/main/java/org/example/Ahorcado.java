@@ -7,7 +7,7 @@ public class Ahorcado {
     private static int contador=0;
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-        String interrogante="camioneta";
+        String interrogante="palabra";
         interrogante=interrogante.toLowerCase();
         interrogante=limpiarTildes(interrogante);
         interrogante=interrogante.replaceAll(" ","");
@@ -23,7 +23,7 @@ public class Ahorcado {
             System.out.println("2.- Palabra");
             int opcion=tec.nextInt();
             if(opcion==1){
-                oculta=buscarletra(pedir(),interrogante,oculta);
+                oculta=buscarletra4(pedir(),interrogante,oculta);
                 mostrar(contador);
             }
             else if(opcion==2){
@@ -83,6 +83,73 @@ public class Ahorcado {
         String palabra = new String(caracteres);
         return palabra;
     }
+    public static String buscarletra2(char caracter, String interrogante, String oculta) {
+        boolean encontrado = false;
+        String nuevaOculta = ""; // Cadena resultante.
+
+        for (int i = 0; i < interrogante.length(); i++) {
+            if (caracter == interrogante.charAt(i)) {
+                encontrado = true;
+                // Si la letra coincide, reemplazamos el carácter de `oculta` con el nuevo.
+                nuevaOculta += caracter;
+            } else {
+                // Si no coincide, mantenemos el carácter de `oculta`.
+                nuevaOculta += oculta.substring(i, i + 1);
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("No está la letra");
+            contador++; // Incrementar el contador si no se encuentra la letra.
+        }
+
+        return nuevaOculta;
+    }
+    public static String buscarletra3(char caracter, String interrogante, String oculta) {
+        boolean encontrado = false;
+        String nuevaOculta = ""; // Cadena resultante.
+
+        for (int i = 0; i < interrogante.length(); i++) {
+            if (caracter == interrogante.charAt(i)) {
+                encontrado = true;
+                // Si la letra coincide, reemplazamos el carácter de `oculta` con el nuevo.
+                nuevaOculta += caracter;
+            } else {
+                // Si no coincide, mantenemos el carácter de `oculta`.
+                nuevaOculta += oculta.charAt(i);
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("No está la letra");
+            contador++; // Incrementar el contador si no se encuentra la letra.
+        }
+
+        return nuevaOculta;
+    }
+    public static String buscarletra4(char caracter, String interrogante, String oculta) {
+        char[] caracteres = oculta.toCharArray();
+        int inicio = 0, i;
+        boolean encontrado = false;
+
+        do {
+            i=interrogante.indexOf(caracter,inicio);
+            if (i >= 0) {
+                caracteres[i]=interrogante.charAt(i);
+                inicio=i+1;
+                encontrado=true;
+            }
+        } while (i>=0 && i<interrogante.length()-1);
+
+        if (!encontrado) {
+            System.out.println("No está la letra");
+            contador++;
+        }
+
+        return new String(caracteres);
+    }
+
+
     public static boolean buscarPalabra(String palabra,String interrogante){
         if(palabra.equals(interrogante)){
             return true;
