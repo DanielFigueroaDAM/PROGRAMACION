@@ -26,5 +26,16 @@ public class Boletin8_2_ej12 {
         }
         System.out.println("Numero de letras: " + contadorLetras);
         System.out.println("Palabra mas larga: " + palabraMasLarga);
+        System.out.println("El numero de palabras: "+palabras.length);
     }
 }
+
+
+
+
+
+
+
+
+
+
