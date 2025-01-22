@@ -13,7 +13,7 @@ public class Boletin8_2_ej12 {
         System.out.println("Numero de palabras: " + palabras.length);
         //contar letras y palabra mas larga
         int contadorLetras = 0;
-        String palabraMasLarga = "", aux = "";
+        String palabraMasLarga = "";
         for (int i = 0; i < cadea.length(); i++) {
             if (cadea.charAt(i) != ' ') {
                 contadorLetras++;

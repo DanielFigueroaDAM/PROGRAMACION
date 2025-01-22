@@ -2,11 +2,12 @@ package org.example;
 
 public class Boletin8_2_ej11 {
     public static void main(String[] args) {
-        String  nombre = "paco gutierrez";
+        String  nombre = "paco gutUerrez";
         System.out.println(formatearNombre(nombre));
     }
     public static String formatearNombre(String nombre){
         String nombreFormateado = "";
+        nombre=nombre.toLowerCase();
         //pasar nombre a array de caracteres
         char[] arrayNombre = nombre.toCharArray();
         //recorrer array
