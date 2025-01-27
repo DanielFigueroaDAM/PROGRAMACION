@@ -17,8 +17,9 @@ public class Ejercicio2_8_3 {
         int intro=web.indexOf("\n");
         System.out.println(intro);
         String html= """
+                <html>
                 <h1>""";
-        html=html+web.substring(0,intro)+"</h1>"+"\n"+"<p>"+web.substring(intro+1,web.length())+"<p>";
+        html=html+web.substring(0,intro)+"</h1>"+"\n"+"<p>"+web.substring(intro+1,web.length())+"<p>"+"\n"+"</html>";
         System.out.println(html);
 
 
