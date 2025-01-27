@@ -19,7 +19,7 @@ public class Ejercicio2_8_3 {
         String html= """
                 <html>
                 <h1>""";
-        html=html+web.substring(0,intro)+"</h1>"+"\n"+"<p>"+web.substring(intro+1,web.length())+"<p>"+"\n"+"</html>";
+        html=html+web.substring(0,intro)+"</h1>"+"<br>"+"\n"+"<p>"+web.substring(intro+1,web.length())+"<p>"+"\n"+"</html>";
         System.out.println(html);
 
 
