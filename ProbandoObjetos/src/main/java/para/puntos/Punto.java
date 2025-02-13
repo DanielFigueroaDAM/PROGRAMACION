@@ -10,7 +10,6 @@ public class Punto {
     }
 
     public int getY() {
-
         return y;
     }
 
@@ -35,5 +34,8 @@ public class Punto {
         else {
             System.out.println("No es valido");
         }
+    }
+    public boolean equals(){
+        if((x==outro))
     }
 }
