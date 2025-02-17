@@ -35,7 +35,4 @@ public class Punto {
             System.out.println("No es valido");
         }
     }
-    public boolean equals(){
-        if((x==outro))
-    }
 }
