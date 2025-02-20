@@ -25,5 +25,6 @@ public class Lista {
     public void numeroAlFinal(int n){
         lista= Arrays.copyOf(lista,lista.length+1);
         lista[lista.length-1]=n;
+        //System.arraycopy(lista,0,novaLista,0,lista.lenght)
     }
 }
