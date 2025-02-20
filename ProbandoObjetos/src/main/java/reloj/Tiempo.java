@@ -1,5 +1,5 @@
 package reloj;
-
+/*
 public class Tiempo {
     private int hora;
     private int minutos;
@@ -96,3 +96,4 @@ public class Tiempo {
         return cadeaHora;
     }
 }
+*/
