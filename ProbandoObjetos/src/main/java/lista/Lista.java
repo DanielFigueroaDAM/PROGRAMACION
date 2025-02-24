@@ -32,4 +32,13 @@ public class Lista {
         System.arraycopy(lista,0,lista,1,lista.length-1);
         lista[0]=n;
     }
+    public void borrarUltimoElemento(){
+        if(lista.length>0){
+            lista=Arrays.copyOf(lista,lista.length-1);
+        }
+        else{
+            System.out.println("no se saca nada");
+        }
+
+    }
 }
