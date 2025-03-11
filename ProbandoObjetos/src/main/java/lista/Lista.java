@@ -27,11 +27,13 @@ public class Lista {
         lista[lista.length-1]=n;
         //System.arraycopy(lista,0,novaLista,0,lista.lenght)
     }
+    /*
     public void numeroAlPrincipio(){
         lista= Arrays.copyOf(lista,lista.length+1);
         System.arraycopy(lista,0,lista,1,lista.length-1);
         lista[0]=n;
     }
+     */
     public void borrarUltimoElemento(){
         if(lista.length>0){
             lista=Arrays.copyOf(lista,lista.length-1);
