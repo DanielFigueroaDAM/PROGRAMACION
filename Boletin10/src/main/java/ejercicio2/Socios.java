@@ -25,4 +25,7 @@ public class Socios extends Miembros{
         }
     }
 
+    public double getCuota() {
+        return cuota;
+    }
 }

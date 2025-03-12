@@ -7,7 +7,17 @@ public class App {
         Asalariados asalariado = new Asalariados("53818040H", "Pedro", "Calle Falsa 132", "Lugo", "01/01/2021", "Informatico", 1000,13,2);
         System.out.println(voluntario.aCadea());
         System.out.println(socio.aCadea());
+        System.out.println(asalariado.aCadea());
         System.out.println(voluntario.calcularGastos());
         System.out.println(asalariado.calcularGastos());
+        Gastos asociacion [] = new Gastos[2];
+        asociacion[0]=voluntario;
+        asociacion[1]=asalariado;
+        double resta =0;
+        for(Gastos mem:asociacion){
+            resta = resta +mem.calcularGastos();
+        }
+        System.out.println(resta);
+
     }
 }
