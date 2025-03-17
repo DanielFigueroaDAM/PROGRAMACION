@@ -34,7 +34,7 @@ public abstract class Miembros {
         int dninumeros = Integer.parseInt(dni);
         if(dninumeros>0 && dninumeros<=99999999){
             int letrap = dninumeros % 23;
-// Hacemos el calculo para descubrir el numero necesario para hacer la conversion.
+        // Hacemos el calculo para descubrir el numero necesario para hacer la conversion.
             switch (letrap) {
                 case 0 -> letraValida = 'T';
                 case 1 -> letraValida = 'R';
