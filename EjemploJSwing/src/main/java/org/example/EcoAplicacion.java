@@ -11,6 +11,7 @@ public class EcoAplicacion extends JFrame{
         setTitle("Primeira aplicacion con Swing");
         JComponent botoneira = creaBotons();
         JComponent panelCadroTexto = creaPanelCadro();
+        cadroTexto=(JTextField) panelCadroTexto;
         JSplitPane panelPrincipal = new JSplitPane(JSplitPane.VERTICAL_SPLIT,botoneira ,panelCadroTexto);
         getContentPane().add(panelPrincipal);
         pack();
@@ -24,7 +25,7 @@ public class EcoAplicacion extends JFrame{
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent actionEvent) {
-
+                        cadroTexto.setText("ola a todos!!");
                     }
                 }
         );
