@@ -1,18 +1,18 @@
-package ficheros.binarios;
+package ejercicio1;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class EscrituraTablaNumerosBinaria {
-    EscrituraTablaNumerosBinaria(int [] taboa){
+public class EscribirArchivoConArray {
+    public EscribirArchivoConArray(Cliente[] lClientes){
         ObjectOutputStream fluxoSaida = null;
         try {
-            fluxoSaida= new ObjectOutputStream(new FileOutputStream("numeros.dat"));
-            if(taboa != null) {
-                for (int numero : taboa) {
-                    fluxoSaida.write(numero);
+            fluxoSaida= new ObjectOutputStream(new FileOutputStream("clientes.dat"));
+            if(lClientes != null) {
+                for (Cliente client : lClientes) {
+                    fluxoSaida.writeObject(client);
                 }
             }
         }
@@ -29,5 +29,6 @@ public class EscrituraTablaNumerosBinaria {
                 }
             }
         }
+
     }
 }
