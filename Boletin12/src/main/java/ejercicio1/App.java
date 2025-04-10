@@ -2,7 +2,7 @@ package ejercicio1;
 
 import java.util.Scanner;
 
-public class App {
+public class  App {
     public static Cliente listaClientes[]=new Cliente[10];
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
@@ -33,13 +33,14 @@ public class App {
                     System.out.println("Dime la modificacion si eliges telefono(000-000-000) y si eliges nombre (nombre): ");
                     String cambio = tec.next();
                     modificacion(elec,cambio,client);
-
+                    new EscribirArchivoConArray(listaClientes);
                     break;
                 case 3:
                     System.out.println("Que cliente quieres dar de baja");
                     mostrarListaCliente();
                     int cl= tec.nextInt();
                     borrarCliente(cl);
+                    new EscribirArchivoConArray(listaClientes);
                     break;
                 case 4:
                     mostrarListaCliente();
@@ -70,20 +71,33 @@ public class App {
         listaClientes[listaClientes.length - 5] = new Cliente(nombre, telefono); // Añade el nuevo cliente
         System.out.println("El array se ha ampliado y el cliente ha sido añadido correctamente.");
     }
-    public static void modificacion(int eleccion, String cambio, int cliente){
-        if(eleccion==1){
+    public static void modificacion(int eleccion, String cambio, int cliente) {
+        if (eleccion == 1) {
             //cambiar nombre
-        }else if(eleccion==2){
+            listaClientes[cliente].setNome(cambio);
+            System.out.println("Nombre cambiado correctamente");
+
+        } else if (eleccion == 2) {
             //cambiar telefono
-        }else {
-            System.out.println("Sintax error");
+            if (cambio.matches("[0-9]{3}-[0-9]{3}-[0-9]{3}")) {
+                listaClientes[cliente].setTelefono(cambio);
+                System.out.println("Telefono cambiado correctamente");
+            } else {
+                System.out.println("Sintax error");
+            }
         }
     }
-    public static void mostrarListaCliente(){
+        public static void mostrarListaCliente () {
+            for (int i = 0; i < listaClientes.length; i++) {
+                if (listaClientes[i] != null) {
+                    System.out.println(i + ". " + listaClientes[i].getNome() + " " + listaClientes[i].getTelefono());
+                }
+            }
 
-    }
-    public static void borrarCliente(int cliente){
+        }
+        public static void borrarCliente ( int cliente){
+            listaClientes[cliente] = null;
+            System.out.println("Cliente borrado correctamente");
 
-    }
-
+        }
 }
