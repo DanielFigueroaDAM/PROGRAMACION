@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class  App {
     public static Cliente listaClientes[]=new Cliente[10];
     public static void main(String[] args) {
+        // Primero recuperar tamaño de la lista
+        new LeerArchivoClientes();
+        ampliarArray();
+        new LeerArchivoClientes();
         Scanner tec = new Scanner(System.in);
         int comp;
         do {
@@ -48,8 +52,9 @@ public class  App {
 
                 case 0:
                     System.out.println("adios,me despido de ti y me voy");
+                    break;
                 default:
-                    System.out.println("Error");
+                    System.out.println("Error, no elegiste una opcion correcta");
             }
 
         } while (comp != 0);
@@ -90,14 +95,27 @@ public class  App {
         public static void mostrarListaCliente () {
             for (int i = 0; i < listaClientes.length; i++) {
                 if (listaClientes[i] != null) {
-                    System.out.println(i + ". " + listaClientes[i].getNome() + " " + listaClientes[i].getTelefono());
+                    System.out.println(i + ". " + listaClientes[i].getNome() + " " + listaClientes[i].getTelefono()+" "+ listaClientes[i].getId());
                 }
             }
 
         }
-        public static void borrarCliente ( int cliente){
+        public static void borrarCliente (int cliente){
             listaClientes[cliente] = null;
             System.out.println("Cliente borrado correctamente");
 
+        }
+        public static void recuperarListaClientes(Cliente cliente) {
+            for (int i = 0; i < listaClientes.length; i++) {
+                if (listaClientes[i] == null) {
+                    listaClientes[i] = cliente;
+                    break;
+                }
+            }
+        }
+        public static void ampliarArray(){
+            // Si no hay espacio, aumenta el tamaño del array
+            Cliente[] nuevaLista = new Cliente[LeerArchivoClientes.contador];
+            listaClientes = nuevaLista;
         }
 }

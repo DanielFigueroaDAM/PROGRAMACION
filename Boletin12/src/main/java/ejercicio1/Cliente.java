@@ -9,7 +9,8 @@ public class Cliente implements Serializable {
 
     public Cliente(String nome, String telefono) {
         this.nome = nome;
-        this.telefono = telefono;
+        setTelefono(telefono);
+        this.id = new Id().getId(this);
     }
 
     public String getNome() {
@@ -25,7 +26,12 @@ public class Cliente implements Serializable {
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        if (telefono.matches("[0-9]{3}[0-9]{3}[0-9]{3}")) {
+            this.telefono = telefono;
+        } else {
+            System.out.println("Sintax error");
+        }
+
     }
 
     public String getId() {
@@ -35,4 +41,14 @@ public class Cliente implements Serializable {
     public void setId(String id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
+
 }
