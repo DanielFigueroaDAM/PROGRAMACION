@@ -37,10 +37,8 @@ public class Notas {
 
     @Override
     public String toString() {
-        return "Notas{" +
-                "idDeNota=" + idDeNota +
+        return "idDeNota=" + idDeNota +
                 ", palabraClave='" + palabraClave + '\'' +
-                ", texto='" + texto + '\'' +
-                '}';
+                ", texto='" + texto;
     }
 }

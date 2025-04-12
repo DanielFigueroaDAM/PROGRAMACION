@@ -14,13 +14,19 @@ public class EscrituraNotas {
             escritor = new BufferedWriter(new FileWriter("notas.txt"));
             // También guardaremos las ids en otro fichero separado
             escritorIds = new BufferedWriter(new FileWriter("ids.txt"));
+            //primero conseguir la distancia de los arrays
+            int count = 0;
             for (Notas nota : notas) {
                 if (nota != null) {
-                    escritor.write(nota.toString());
-                    escritorIds.write(String.valueOf(nota.getIdDeNota()));
-                    escritor.newLine(); // Salto de línea para que sea un objeto por línea
-                    escritorIds.newLine(); // Salto de línea para que sea un objeto por línea
-
+                    count++;
+                }
+            }
+            for(int i = 0; i < count; i++) {
+                if (notas[i] != null) {
+                    // Guardamos la id de la nota
+                    escritorIds.write(notas[i].getIdDeNota() + "\n");
+                    // Guardamos el objeto de la clase Notas
+                    escritor.write(notas[i].getIdDeNota() + "," + notas[i].getPalabraClave() + "," + notas[i].getTexto() + "\n");
                 }
             }
         } catch (IIOException e) {
