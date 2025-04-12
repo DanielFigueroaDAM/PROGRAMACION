@@ -2,7 +2,7 @@ package ejercicio2;
 
 public class Id {
     private static int contador = 0;
-    private static int[] idNotas = new int[10];
+    public static int[] idNotas = new int[10];
     public static int generearId(String palabra){
         contador++;
         int id = contador + palabra.charAt(0);

@@ -34,4 +34,13 @@ public class Notas {
     public void setTexto(String texto) {
         this.texto = texto;
     }
+
+    @Override
+    public String toString() {
+        return "Notas{" +
+                "idDeNota=" + idDeNota +
+                ", palabraClave='" + palabraClave + '\'' +
+                ", texto='" + texto + '\'' +
+                '}';
+    }
 }
