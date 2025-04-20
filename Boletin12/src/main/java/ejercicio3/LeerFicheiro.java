@@ -3,6 +3,7 @@ package ejercicio3;
 import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class LeerFicheiro {
@@ -47,16 +48,33 @@ public class LeerFicheiro {
     }
     //Mostrar frecuencia de cada palabra
     public void mostrarFrecuencia() {
-        for (int i = 0; i < listaPalabras.length; i++) {
-            if (listaPalabras[i] != null) {
-                int contador = 0;
-                for (int j = 0; j < listaPalabras.length; j++) {
-                    if (listaPalabras[i].equals(listaPalabras[j])) {
-                        contador++;
+        // Escribir en un fichero la frecuencia de cada palabra
+        FileWriter escritor = null;
+        try{
+            escritor = new FileWriter("/home/figue/PROGRAMACION/Boletin12/src/main/java/ejercicio3/Frecuencia.txt");
+            for (int i = 0; i < listaPalabras.length; i++) {
+                if (listaPalabras[i] != null) {
+                    int contador = 0;
+                    for (int j = 0; j < listaPalabras.length; j++) {
+                        if (listaPalabras[i].equals(listaPalabras[j])) {
+                            contador++;
+                        }
                     }
+                    escritor.write("La palabra " + listaPalabras[i] + " aparece " + contador + " veces\n");
                 }
-                System.out.println("La palabra " + listaPalabras[i] + " aparece " + contador + " veces");
             }
+
+        }catch (IOException e){
+            System.out.println("Error de entrada/salida: " + e.getMessage());
+        } finally {
+            if (escritor != null) {
+                try {
+                    escritor.close();
+                } catch (IOException e) {
+                    System.out.println("Error de entrada/salida al cerrar: " + e.getMessage());
+                }
+            }
+
         }
     }
 }
