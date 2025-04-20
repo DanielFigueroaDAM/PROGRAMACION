@@ -9,6 +9,7 @@ public class App {
         String nomeFicheiro = tec.nextLine();
         LeerFicheiro f1 = new LeerFicheiro(nomeFicheiro);
         f1.mostrarPalabras();
+        f1.mostrarFrecuencia();
 
     }
 }

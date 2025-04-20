@@ -45,4 +45,18 @@ public class LeerFicheiro {
             }
         }
     }
+    //Mostrar frecuencia de cada palabra
+    public void mostrarFrecuencia() {
+        for (int i = 0; i < listaPalabras.length; i++) {
+            if (listaPalabras[i] != null) {
+                int contador = 0;
+                for (int j = 0; j < listaPalabras.length; j++) {
+                    if (listaPalabras[i].equals(listaPalabras[j])) {
+                        contador++;
+                    }
+                }
+                System.out.println("La palabra " + listaPalabras[i] + " aparece " + contador + " veces");
+            }
+        }
+    }
 }
