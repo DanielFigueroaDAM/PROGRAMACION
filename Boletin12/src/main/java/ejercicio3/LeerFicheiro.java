@@ -18,15 +18,21 @@ public class LeerFicheiro {
             lector = new FileReader("/home/figue/PROGRAMACION/Boletin12/src/main/java/ejercicio3/"+nomeFicheiro);
             int caracter = lector.read();
             while (caracter != -1) {
-                if(caracter !=(char)' '){
+                // separar por espacios e ignorar puntos y comas
+                if(caracter !=(char)' ' && caracter != (char)'.' && caracter != (char)',' && caracter != (char)';' && caracter != (char)':' && caracter != (char)'\n' && caracter != (char)'\r' && caracter != (char)'\t'){
                     palabra += (char) caracter;
                 }else{
-                    listaPalabras[contador] = palabra;
-                    contador++;
-                    palabra = "";
-                }
-                if (contador == listaPalabras.length-1) {
-                    ampliarArray();
+                    // sólo añadimos si realmente hay algo en 'palabra'
+                    if (!palabra.isEmpty()) {
+                        listaPalabras[contador++] = palabra.toLowerCase();
+                        palabra = "";
+                        if (contador == listaPalabras.length - 1) {
+                            ampliarArray();
+                        }
+                    }
+                    // si palabra estaba vacía, simplemente seguimos (no incrementamos contador)
+
+
                 }
                 caracter = lector.read();
             }
@@ -57,14 +63,19 @@ public class LeerFicheiro {
             escritor = new FileWriter("/home/figue/PROGRAMACION/Boletin12/src/main/java/ejercicio3/Frecuencia.txt");
             for (int i = 0; i < listaPalabras.length; i++) {
                 if (listaPalabras[i] != null) {
+
                     int contador = 0;
                     for (int j = 0; j < listaPalabras.length; j++) {
                         if (listaPalabras[i].equals(listaPalabras[j])) {
                             contador++;
                         }
+
                     }
+
                     escritor.write("La palabra " + listaPalabras[i] + " aparece " + contador + " veces\n");
+
                 }
+
             }
 
         }catch (IOException e){
