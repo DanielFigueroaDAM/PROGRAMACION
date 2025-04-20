@@ -25,6 +25,9 @@ public class LeerFicheiro {
                     contador++;
                     palabra = "";
                 }
+                if (contador == listaPalabras.length-1) {
+                    ampliarArray();
+                }
                 caracter = lector.read();
             }
         }catch (IOException e){
@@ -76,5 +79,12 @@ public class LeerFicheiro {
             }
 
         }
+    }
+    private void ampliarArray() {
+        String[] nuevoArray = new String[listaPalabras.length * 2];
+        for (int i = 0; i < listaPalabras.length; i++) {
+            nuevoArray[i] = listaPalabras[i];
+        }
+        listaPalabras = nuevoArray;
     }
 }
