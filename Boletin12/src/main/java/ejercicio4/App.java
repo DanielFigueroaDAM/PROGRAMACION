@@ -11,6 +11,7 @@ public class App {
 
     public static Tarefa listaTareas[] = new Tarefa[10];
     public static void main(String[] args) {
+
         int opcion = 0;
         do{
             Scanner tec = new Scanner(System.in);
@@ -75,6 +76,7 @@ public class App {
                     break;
             }
         }while (opcion!=0);
+        new EscrituraTarefas(listaTareas);
     }
 
     public static boolean modificarTarea() {
@@ -136,6 +138,7 @@ public class App {
                 System.out.println("Quieres modificar otra tarea? (1/0)");
                 salida2 = tec.nextInt();
         } while (salida2 != 0);
+        new EscrituraTarefas(listaTareas);
         return true;
     }
     public static void eliminarTarea(int numeroTarea){
@@ -154,6 +157,7 @@ public class App {
         System.out.println("El array se ha compactado para eliminar la tarea");
         System.out.println("Tareas restantes:");
         listarTareas();
+        new EscrituraTarefas(listaTareas);
     }
     public static void agregarTarea(Tarefa tarea){
         boolean agregado = false;
@@ -177,6 +181,8 @@ public class App {
             System.out.println("El array se ha ampliado para agregar la tarea");
         }
         System.out.println("Tarea agregada correctamente");
+        new EscrituraTarefas(listaTareas);
+
     }
     public static void listarTareas(){
         for(int i = 0; i < listaTareas.length; i++){
@@ -192,6 +198,10 @@ public class App {
         for(Tarefa tarea: tareas){
             agregarTarea(tarea);
         }
+    }
+    public static void recuperarLongitud(int longitud){
+        Tarefa listaTareas2[] = new Tarefa[longitud];
+        listaTareas = listaTareas2;
     }
 
 }
