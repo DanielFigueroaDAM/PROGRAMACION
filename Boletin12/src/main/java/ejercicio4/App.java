@@ -188,5 +188,10 @@ public class App {
             }
         }
     }
+    public static void recuperarTareas(Tarefa tareas){
+        for(Tarefa tarea: tareas){
+            agregarTarea(tarea);
+        }
+    }
 
 }
