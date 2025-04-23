@@ -14,8 +14,12 @@ public class Main {
         ContedorElementos<Double> t= new ContedorElementos<>(temp);
         t.apilar(2.45);
         t.apilar(33.56);
+        t.encolar(12.45);
+        t.encolar(41.44);
         System.out.println(t.desapilar());
         System.out.println(t.desapilar());
         System.out.println(t.desapilar());
+        System.out.println(t.desencolar());
+        System.out.println(t.desencolar());
     }
 }
