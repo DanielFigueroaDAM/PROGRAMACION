@@ -15,7 +15,7 @@ public class LeerFicheiro {
         int contador = 0;
         String palabra = "";
         try{
-            lector = new FileReader("/home/figue/PROGRAMACION/Boletin12/src/main/java/ejercicio3/"+nomeFicheiro);
+            lector = new FileReader("/home/dam/PROGRAMACION/Boletin12/src/main/java/ejercicio3/"+nomeFicheiro);
             int caracter = lector.read();
             while (caracter != -1) {
                 // separar por espacios e ignorar puntos y comas
@@ -55,12 +55,13 @@ public class LeerFicheiro {
             }
         }
     }
+    public String[] palabrasUnicas= new String[20];
     //Mostrar frecuencia de cada palabra
     public void mostrarFrecuencia() {
         // Escribir en un fichero la frecuencia de cada palabra
         FileWriter escritor = null;
         try{
-            escritor = new FileWriter("/home/figue/PROGRAMACION/Boletin12/src/main/java/ejercicio3/Frecuencia.txt");
+            escritor = new FileWriter("/home/dam/PROGRAMACION/Boletin12/src/main/java/ejercicio3/Frecuencia.txt");
             for (int i = 0; i < listaPalabras.length; i++) {
                 if (listaPalabras[i] != null) {
 
@@ -71,8 +72,9 @@ public class LeerFicheiro {
                         }
 
                     }
-
-                    escritor.write("La palabra " + listaPalabras[i] + " aparece " + contador + " veces\n");
+                    if(comprobarPalabra(listaPalabras[i])){
+                        escritor.write("La palabra " + listaPalabras[i] + " aparece " + contador + " veces\n");
+                    }
 
                 }
 
@@ -97,5 +99,36 @@ public class LeerFicheiro {
             nuevoArray[i] = listaPalabras[i];
         }
         listaPalabras = nuevoArray;
+    }
+
+    private boolean comprobarPalabra(String palabra) {
+        boolean comp = false;
+        // Verificar si la palabra ya existe
+        for (int i = 0; i < palabrasUnicas.length; i++) {
+            if (palabra.equals(palabrasUnicas[i])) {
+                comp = true;
+                break;
+            }
+        }
+        if (!comp) {
+            boolean added = false;
+            // Buscar espacio null para añadir
+            for (int i = 0; i < palabrasUnicas.length; i++) {
+                if (palabrasUnicas[i] == null) {
+                    palabrasUnicas[i] = palabra;
+                    added = true;
+                    break;
+                }
+            }
+            if (!added) {
+                // Ampliar el array y añadir la palabra
+                String[] nuevoArray = new String[palabrasUnicas.length * 2];
+                System.arraycopy(palabrasUnicas, 0, nuevoArray, 0, palabrasUnicas.length);
+                nuevoArray[palabrasUnicas.length] = palabra; // Añadir en la posición correcta
+                palabrasUnicas = nuevoArray; // Actualizar la referencia de la variable de instancia
+            }
+            return true;
+        }
+        return false;
     }
 }
