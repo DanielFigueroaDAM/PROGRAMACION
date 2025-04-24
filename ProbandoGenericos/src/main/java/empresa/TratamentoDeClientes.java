@@ -17,6 +17,10 @@ public class TratamentoDeClientes {
         for(;indice.hasNext();){
             System.out.println(indice.next());
         }
+        for(Cliente cliente: coleccionCliente){
+            System.out.println(cliente);
+
+        }
         coleccionCliente.remove(unCliente);
         coleccionCliente.clear();
         coleccionCliente.toString();
