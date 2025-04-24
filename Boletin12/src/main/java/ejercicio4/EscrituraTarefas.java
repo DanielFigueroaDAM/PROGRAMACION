@@ -13,7 +13,9 @@ public class EscrituraTarefas {
             fluxoSaida= new ObjectOutputStream(new FileOutputStream("tarefas.dat"));
             if(tarea != null) {
                 for (Tarefa tarefa : tarea) {
-                    fluxoSaida.writeObject(tarefa);
+                    if (tarefa != null) {  // Solo escribir tareas no nulas
+                        fluxoSaida.writeObject(tarefa);
+                    }
                 }
             }
         }catch (FileNotFoundException e){

@@ -5,16 +5,17 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
 
     public static Tarefa listaTareas[] = new Tarefa[10];
     public static void main(String[] args) {
-
+        Scanner tec = new Scanner(System.in);
         int opcion = 0;
         do{
-            Scanner tec = new Scanner(System.in);
+
             System.out.println("1.Agregar nueva tarea");
             System.out.println("2.Listar tareas");
             System.out.println("3.Modificar tarea");
@@ -77,6 +78,7 @@ public class App {
             }
         }while (opcion!=0);
         new EscrituraTarefas(listaTareas);
+        tec.close();
     }
 
     public static boolean modificarTarea() {
@@ -86,6 +88,10 @@ public class App {
             listarTareas();
             System.out.println("Escribe el numero de la tarea que quieres modificar");
             int numeroTarea = tec.nextInt();
+            if (numeroTarea < 0 || numeroTarea >= listaTareas.length || listaTareas[numeroTarea] == null) {
+                System.out.println("Índice inválido");
+                continue;
+            }
             do {
                 System.out.println("1.Modificar nombre");
                 System.out.println("2.Modificar descripcion");
@@ -125,7 +131,16 @@ public class App {
                         break;
                     case 5:
                         System.out.println("Escribe el nuevo estado (true/false):");
-                        boolean nuevoEstado = tec.nextBoolean();
+                        boolean nuevoEstado = false;
+                        while (true) {  // Validar entrada booleana
+                            try {
+                                nuevoEstado = tec.nextBoolean();
+                                break;
+                            } catch (InputMismatchException e) {
+                                System.out.println("Error: Ingresa 'true' o 'false'");
+                                tec.next();  // Limpiar entrada incorrecta
+                            }
+                        }
                         listaTareas[numeroTarea].setCompletada(nuevoEstado);
                         break;
                     case 0:
@@ -142,18 +157,16 @@ public class App {
         return true;
     }
     public static void eliminarTarea(int numeroTarea){
-        listaTareas[numeroTarea] = null;
-        System.out.println("Tarea eliminada correctamente");
-        //compactar el array eliminando los nulls
-        int j = 0;
-        for(int i = 0; i < listaTareas.length; i++){
-            if(listaTareas[i]!=null){
-                listaTareas[j] = listaTareas[i];
-                j++;
-            }
+        if (numeroTarea < 0 || numeroTarea >= listaTareas.length || listaTareas[numeroTarea] == null) {
+            System.out.println("Índice inválido");
+            return;
         }
-        //Actualizar la longitud del array
-        listaTareas = Arrays.copyOf(listaTareas, j);
+        // Mover elementos hacia la izquierda
+        for (int i = numeroTarea; i < listaTareas.length - 1; i++) {
+            listaTareas[i] = listaTareas[i + 1];
+        }
+        listaTareas = Arrays.copyOf(listaTareas, listaTareas.length - 1);  // Reducir tamaño
+        System.out.println("Tarea eliminada correctamente");
         System.out.println("El array se ha compactado para eliminar la tarea");
         System.out.println("Tareas restantes:");
         listarTareas();
@@ -184,20 +197,15 @@ public class App {
         new EscrituraTarefas(listaTareas);
 
     }
-    public static void listarTareas(){
-        for(int i = 0; i < listaTareas.length; i++){
-            //mostrar cada tarea en la lista
-            if(listaTareas[i]!=null){
-                System.out.println(i+"."+listaTareas[i].toString() + "\n");
-            }  else{
-                break;
+    public static void listarTareas() {
+        for (int i = 0; i < listaTareas.length; i++) {
+            if (listaTareas[i] != null) {  // Mostrar solo tareas no nulas
+                System.out.println(i + ". " + listaTareas[i].toString());
             }
         }
     }
-    public static void recuperarTareas(Tarefa tareas){
-        for(Tarefa tarea: tareas){
-            agregarTarea(tarea);
-        }
+    public static void recuperarTareas(Tarefa tarea) {  // Recibe una sola tarea
+        agregarTarea(tarea);  // Llama al método existente
     }
     public static void recuperarLongitud(int longitud){
         Tarefa listaTareas2[] = new Tarefa[longitud];
