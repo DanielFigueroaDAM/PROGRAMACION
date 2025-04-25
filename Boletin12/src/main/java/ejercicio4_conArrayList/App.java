@@ -16,6 +16,7 @@ public class App {
     public static ArrayList<Tarefa> tareas = new ArrayList<>();
 
     public static void main(String[] args) {
+        new LecturaTarefasConArrayList();
         Scanner tec = new Scanner(System.in);
         int opcion = 0;
         do{
@@ -88,7 +89,7 @@ public class App {
                     break;
             }
         }while (opcion!=0);
-        new EscrituraTarefas(listaTareas);
+        new EscrituraTarefasConArrayList(tareas);
         tec.close();
     }
 
@@ -174,59 +175,29 @@ public class App {
         return true;
     }
     public static void eliminarTarea(Tarefa tarea) {
-        if ( listaTareas[numeroTarea] == null) {
-            System.out.println("Índice inválido");
+        if (!tareas.contains(tarea)) {
+            System.out.println("Tarea no encontrada, seguramente se llama de otra manera");
             return;
+        }else {
+             // Reducir tamaño
+            tareas.remove(tarea);
+            System.out.println("Tarea eliminada correctamente");
+            System.out.println("El array se ha compactado para eliminar la tarea");
+            System.out.println("Tareas restantes:");
+            listarTareas();
         }
-        // Mover elementos hacia la izquierda
-        for (int i = numeroTarea; i < listaTareas.length - 1; i++) {
-            listaTareas[i] = listaTareas[i + 1];
-        }
-        listaTareas = Arrays.copyOf(listaTareas, listaTareas.length - 1);  // Reducir tamaño
-        System.out.println("Tarea eliminada correctamente");
-        System.out.println("El array se ha compactado para eliminar la tarea");
-        System.out.println("Tareas restantes:");
-        listarTareas();
-        new EscrituraTarefas(listaTareas);
     }
-    public static void agregarTarea(ejercicio4.Tarefa tarea){
-        boolean agregado = false;
-        for (int i = 0; i < listaTareas.length; i++) {
-            if (listaTareas[i] == null) {
-                listaTareas[i] = tarea;
-                agregado = true;
-                break;
-            }
-        }
-        if(!agregado){
-            //Ampliar el array de tareas usando copy
-            //primero creamos un nuevo array con el doble de tamaño
-            ejercicio4.Tarefa[] nuevoArray = new ejercicio4.Tarefa[listaTareas.length * 2];
-            //Copiamos los elementos de la lista actual al nuevo array
-            System.arraycopy(listaTareas, 0, nuevoArray, 0, listaTareas.length);
-            //Añadimos la nueva tarea al nuevo array
-            nuevoArray[listaTareas.length] = tarea;
-            //Actualizamos la lista de tareas
-            listaTareas = nuevoArray;
-            System.out.println("El array se ha ampliado para agregar la tarea");
-        }
-        System.out.println("Tarea agregada correctamente");
-        new EscrituraTarefas(listaTareas);
+    public static void agregarTarea(Tarefa tarea){
+        tareas.add(tarea);
 
     }
     public static void listarTareas() {
-        for (int i = 0; i < listaTareas.length; i++) {
-            if (listaTareas[i] != null) {  // Mostrar solo tareas no nulas
-                System.out.println(i + ". " + listaTareas[i].toString());
-            }
+        for(Tarefa t: tareas){
+            System.out.println(t.toString());
         }
     }
     public static void recuperarTareas(ejercicio4.Tarefa tarea) {  // Recibe una sola tarea
         agregarTarea(tarea);  // Llama al método existente
-    }
-    public static void recuperarLongitud(int longitud){
-        ejercicio4.Tarefa listaTareas2[] = new Tarefa[longitud];
-        listaTareas = listaTareas2;
     }
 
 }
