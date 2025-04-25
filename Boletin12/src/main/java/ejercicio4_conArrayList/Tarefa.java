@@ -1,4 +1,4 @@
-package ejercicio4;
+package ejercicio4_conArrayList;
 
 import java.io.Serializable;
 import java.time.LocalDate;
