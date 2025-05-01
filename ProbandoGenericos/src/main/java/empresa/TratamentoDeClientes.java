@@ -21,6 +21,9 @@ public class TratamentoDeClientes {
             System.out.println(cliente);
 
         }
+        //acceder a un cliente por su posicion
+        int posicion = 0;
+        System.out.println(((ArrayList<Cliente>) coleccionCliente).get(posicion));
         coleccionCliente.remove(unCliente);
         coleccionCliente.clear();
         coleccionCliente.toString();
