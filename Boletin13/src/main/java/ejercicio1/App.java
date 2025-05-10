@@ -2,7 +2,7 @@ package ejercicio1;
 
 import java.util.Arrays;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
         Integer [] array1 = {1, 2, 3};
         Integer [] array2 = {4, 5, 6};
