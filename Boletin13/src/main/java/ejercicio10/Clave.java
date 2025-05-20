@@ -1,6 +1,7 @@
 package ejercicio10;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Clave implements Serializable {
     private String id;
@@ -37,5 +38,18 @@ public class Clave implements Serializable {
         return "Clave{" +
                 "id='" + id + '\'' +
                 '}';
+    }
+    private static final long serialVersionUID = 303323466479763447L;
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Clave clave = (Clave) o;
+        return Objects.equals(id, clave.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }

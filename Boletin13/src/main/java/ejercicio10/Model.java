@@ -35,7 +35,19 @@ public class Model {
     public static String mostrarProductos() {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<Clave, Producto> entry : listaProductos.entrySet()) {
-            sb.append("Clave: ").append(entry.getKey()).append(", Producto: ").append(entry.getValue()).append("\n");
+            Clave clave = entry.getKey();
+            Producto producto = entry.getValue();
+            // Obtener la cantidad de productos de la lista de cantidades
+            Integer cantidad;
+            if (listaCantidades.containsKey(clave)) {
+                cantidad = listaCantidades.get(clave);
+            } else {
+                cantidad = 0; // Si no existe la clave en la lista de cantidades, asignar 0
+            }
+            sb.append("Clave: ").append(clave)
+              .append(", Producto: ").append(producto)
+              .append(", Cantidad: ").append(cantidad)
+              .append("\n");
         }
         return sb.toString();
     }
@@ -82,6 +94,22 @@ public class Model {
         }
 
 
+    }
+    public static boolean añadirCantidad(Clave clave, int cantidad) {
+        if (clave == null) {
+            throw new IllegalArgumentException("La clave no puede ser nula");
+        }
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException("La cantidad debe ser mayor que 0");
+        }
+        if (listaCantidades.containsKey(clave)) {
+            int cantidadActual = listaCantidades.get(clave);
+            listaCantidades.put(clave, cantidadActual + cantidad);
+        } else {
+            throw new IllegalArgumentException("La clave no existe en la lista de cantidades");
+        }
+        new EscrituraDatos(listaProductos, listaCantidades);
+        return true;
     }
 
 }

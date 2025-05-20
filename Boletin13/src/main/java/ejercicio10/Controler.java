@@ -28,6 +28,13 @@ public class Controler {
         Model.recuperarDatos();
         return true;
     }
+    public static boolean recibirAñadirCantidad(String clave, int cantidad) {
+        Clave clave1= new Clave(clave);
+        if (Model.existeLaClave(clave1)){
+            return Model.añadirCantidad(clave1, cantidad);
+        }
+        return false;
+    }
 
 
 

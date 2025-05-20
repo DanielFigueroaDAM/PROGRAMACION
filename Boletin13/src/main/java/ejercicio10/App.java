@@ -42,10 +42,22 @@ public class App {
                     String clave = tec.next();
                     Controler.recibirBorrarProducto(clave);
                     break;
-                    case 4:
-
-
+                case 4:
+                    System.out.println(Controler.recibirMostrarProductos());
+                    System.out.println("Introduce la clave del producto a añadir cantidad");
+                    String claveCantidad = tec.next();
+                    if (!Controler.recibirExisteLaClave(new Clave(claveCantidad))) {
+                        System.out.println("La clave no existe");
                         break;
+                    }
+                    System.out.println("Introduce la cantidad a añadir");
+                    while (!tec.hasNextInt()) { // Valida que la entrada sea un número
+                        System.out.println("Por favor, introduce un número válido para la cantidad:");
+                        tec.next(); // Descarta la entrada no válida
+                    }
+                    int cantidad = tec.nextInt();
+                    Controler.recibirAñadirCantidad(claveCantidad, cantidad);
+                    break;
 
                 case 5:
                     System.out.println("Saliendo...");
