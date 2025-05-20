@@ -14,11 +14,12 @@ public class Model {
         if (clave == null || producto == null) {
             throw new IllegalArgumentException("La clave o el producto no pueden ser nulos");
         }
-        if (listaProductos.containsKey(clave)) {;
+        if (listaProductos.containsKey(clave)) {
             int cantidad = listaCantidades.get(clave);
             listaCantidades.put(clave, cantidad + 1);
-        }else {
+        } else {
             listaProductos.put(clave, producto);
+            listaCantidades.put(clave, 1); // Inicializa la cantidad en 0
         }
         new EscrituraDatos(listaProductos, listaCantidades);
         return true;
@@ -66,34 +67,29 @@ public class Model {
         return listaProductos.get(clave);
     }
     public static void recuperarDatos() {
-        //recuperar datos de los archivos
-        ObjectInputStream flujoSalida = null;
-        ObjectInputStream flujoSalida2 = null;
-        try{
-            flujoSalida = new ObjectInputStream(new FileInputStream("productos.dat"));
-            flujoSalida2 = new ObjectInputStream(new FileInputStream("cantidades.dat"));
-            listaProductos = (Map<Clave, Producto>) flujoSalida.readObject();
-            listaCantidades = (Map<Clave, Integer>) flujoSalida2.readObject();
+        try {
+            File fileProductos = new File("productos.dat");
+            File fileCantidades = new File("cantidades.dat");
+
+            if (fileProductos.exists()) {
+                ObjectInputStream flujoSalida = new ObjectInputStream(new FileInputStream(fileProductos));
+                listaProductos = (Map<Clave, Producto>) flujoSalida.readObject();
+                flujoSalida.close();
+            } else {
+                listaProductos = new HashMap<>();
+            }
+
+            if (fileCantidades.exists()) {
+                ObjectInputStream flujoSalida2 = new ObjectInputStream(new FileInputStream(fileCantidades));
+                listaCantidades = (Map<Clave, Integer>) flujoSalida2.readObject();
+                flujoSalida2.close();
+            } else {
+                listaCantidades = new HashMap<>();
+            }
         } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } finally {
-            if (flujoSalida != null) {
-                try {
-                    flujoSalida.close();
-                } catch (IOException e) {
-                    System.out.println("Error de entrada/salida al cerrar: " + e.getMessage());
-                }
-            }
-            if (flujoSalida2 != null) {
-                try {
-                    flujoSalida2.close();
-                } catch (IOException e) {
-                    System.out.println("Error de entrada/salida al cerrar: " + e.getMessage());
-                }
-            }
+            listaProductos = new HashMap<>();
+            listaCantidades = new HashMap<>();
         }
-
-
     }
     public static boolean añadirCantidad(Clave clave, int cantidad) {
         if (clave == null) {
