@@ -28,14 +28,17 @@ public class Academico implements Comparable{
         this.anoDeIngreso = anoDeIngreso;
     }
 
+    /** Orden natural: alfabético por nombre (ignorando mayúsculas/minúsculas). */
     @Override
     public int compareTo(Object o) {
-        // Ordenar por nome alfabéticamente
-        if (o instanceof Academico) {
-            Academico outro = (Academico) o;
-            return this.nome.toLowerCase(Locale.ROOT).compareTo(outro.nome.toLowerCase(Locale.ROOT));
+        // Si el objeto que llega no es un Académico, no sabemos compararlo.
+        if (!(o instanceof Academico)) {
+            return 0;
         }
-        // Si o objeto no es un Academico, no se puede comparar
-        return 0;
+        Academico outro = (Academico) o;
+        return this.nome.toLowerCase(Locale.ROOT)
+                .compareTo(outro.nome.toLowerCase(Locale.ROOT));
     }
+
+
 }
